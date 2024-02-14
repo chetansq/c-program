@@ -10,6 +10,8 @@ struct gst{
 	
 };
 
+
+
 struct gst gst;
 
 int main()

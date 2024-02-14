@@ -1,10 +1,10 @@
 #include <stdio.h>
 int main()
 {
-    int var ;
+    int var;
 
     printf("enter no :");
-    scanf("%d",&var);
+    scanf("%d", &var);
 
     switch (var)
     {
@@ -16,7 +16,11 @@ int main()
         printf("case 2");
         break;
 
-    default :
+    case 3:
+        printf("case 3");
+        break;
+
+    default:
         printf("not ");
         break;
     }

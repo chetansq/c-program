@@ -8,6 +8,7 @@ int main()
     cin>> a;
 
     cout<<"the value is :"<< a <<endl;
+    cout<<"enter the value :";
     cin  >> a;
 
     return 0;

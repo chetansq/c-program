@@ -9,9 +9,6 @@ struct gst{
 	float amt,dis,billamt,gst,netbill;
 	
 };
-
-
-
 struct gst gst;
 
 int main()

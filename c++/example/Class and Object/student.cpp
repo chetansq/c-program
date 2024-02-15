@@ -4,7 +4,7 @@ using namespace std;
 class student
 {
 
-    // private:
+     private:  //without declare "private" ,it is also take private mamber
     int admno;
     char sname[20];
     float eng, math, science;

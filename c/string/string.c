@@ -1,26 +1,32 @@
 #include<stdio.h>
 int main()
 {
-	char name1[50],name2[50]; 
-	int i,j;
-	gets(name1);
-	gets(name2);
+	// char name1[50],name2[50]; 
+	// int i,j;
+	// gets(name1);
+	// gets(name2);
 	
-	for( i=0; name1[i]!='\0'; i++)
-	{	
+	// for( i=0; name1[i]!='\0'; i++)
+	// {	
 
-		printf("%c",name1[i]);
+	// 	printf("%c",name1[i]);
 	
-	}
+	// }
 	
-	for( j=0; name2[j]!='\0'; j++)
-	{	
+	// for( j=0; name2[j]!='\0'; j++)
+	// {	
 		
-		printf("%c",name2[j]);
+	// 	printf("%c",name2[j]);
 
-	}
+	// }
 	
-	printf("\n%c",name1[i] + name2[j]);
-	
+	// printf("\n%c",name1[i] + name2[j]);
+
+	char string[50];
+
+	printf("enter string : ");
+	// scanf("%s",&string);
+	gets(string);
+	printf("string is : %s",string);
 	return 0;
 }

@@ -12,7 +12,7 @@ int main()
 		
 			printf("%d\t",i);
 		
-			i*=2;;
+			i*=2;
 			
 		}while(i<=n);
 		

@@ -14,24 +14,27 @@ private:
 
 public:
     student();
-    float call()
-    {
-        total = eng + math + science;
-        return total ;
-    }
-    // void takedata();
+
+   
     void showdata()
     {
-        cout << " Admin No : "<<admno<<endl;
-        cout << " Student Name : "<<sname<<endl;
-        cout << " English : "<<eng<<endl;
-        cout << " Math : "<<math<<endl;
-        cout << " Science : "<<science <<endl;
-        
+        cout << " Admin No : " << admno << endl;
+        cout << " Student Name : " << sname << endl;
+        cout << " English : " << eng << endl;
+        cout << " Math : " << math << endl;
+        cout << " Science : " << science << endl;
+
         float a;
-        a=call();
-        cout<<"total "<<a<<endl;
-        }
+        a = ctotal();
+        cout << "total " << a << endl;
+        float ctotal();
+    }
+};
+
+float student ::ctotal()
+{
+    total = eng + math + science;
+    return total;
 };
 
 student ::student()
@@ -57,6 +60,6 @@ int main()
     student std;
 
     std.showdata();
-    
+
     return 0;
 }

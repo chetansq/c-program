@@ -2,19 +2,24 @@
 int main()
 {
 	char a;
-	int b;
+	
 	
 	for(a>='A'; a<='Z'; a++)
 	{
 		if(a>='A' && a<='Z')
 		{
-			b=a;
-			if(!(b%2==0))
+		
+			if(!(a%2==0))
 			{
 				
-				printf("%c\t%c",b,a);
-				a = b+32;
+				printf("%c\t",a);
 				
+			}
+			else
+			{
+				a+=33;
+				printf("%c\t",a);
+				a-=31;
 			}
 		}
 		

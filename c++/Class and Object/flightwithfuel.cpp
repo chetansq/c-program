@@ -23,7 +23,6 @@ public:
 
         cout << "Distance : ";
         cin >> Distance;
-
         
     }
 
@@ -38,34 +37,33 @@ public:
 
 void Fuel ::calfuel()
 {
-    
+
     if (Distance <= 1000)
     {
 
-        Fuel = Distance / 96;
+        Fuel = Distance / 96 * 10;
         cout << "fuel is : " << Fuel << endl;
     }
     else if (Distance > 1000 && Distance <= 2000)
     {
 
-        Fuel= Distance / 96;
+        Fuel = Distance / 96 * 10;
         cout << "fuel is : " << Fuel << endl;
     }
     else if (Distance > 2000)
     {
-        Fuel = Distance / 96;
+        Fuel = Distance / 96 * 10;
         cout << "fuel is : " << Fuel << endl;
     }
 }
 
-int mian()
+int main()
 {
     Fuel qty;
 
     qty.feedinfo();
+
     qty.showdata();
-    cout<<"hello"; 
-    
 
     return 0;
 }

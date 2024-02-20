@@ -13,16 +13,24 @@ class batsman
 public:
     batsman();
 
-    // void readdata();
+    
     void displaydata()
     {
         cout << " bcode : "<<bcode<<endl;;
         cout << " name : "<<bname<<endl;
         cout << " inninsg : "<<innings<<endl;
         cout << " notout : "<<notout<<endl;
-        cout << " runs : "<<runs<<endl;    
+        cout << " runs : "<<runs<<endl; 
+
+        calcavg();   
     }
 };
+
+void batsman :: calcavg()
+{
+    batavg=runs/(innings - notout);
+    cout<<"bat average : "<<batavg<<endl;
+}
 
 batsman ::batsman()
 {
@@ -44,6 +52,8 @@ batsman ::batsman()
 
 int main()
 {
+    batsman bat;
+    bat.displaydata();
 
     return 0;
 }

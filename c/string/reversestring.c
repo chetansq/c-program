@@ -15,7 +15,7 @@ int main()
 	
 	printf("\n");
 	
-	for(j=i; name[j]>=0; j--)
+	for(j=i; name[j]>='\0'; j--)
 	{
 		printf("%c",name[j]);
 		

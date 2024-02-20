@@ -15,9 +15,7 @@ int main()
 			{
 				printf("enter marks :");
 				scanf("%d",&marks[j]);
-				
-					
-				
+
 			}
 			
 			 total = marks[0] + marks[1] + marks[2];

@@ -2,12 +2,12 @@
 int main()
 {
 	
-	int arr[4]={10,11,10,13};
+	int arr[4]={10,10,10,13};
 	int a=0,b=0;
 	
 	for(int i=0;i<4; i++)
 	{
-		if(arr[i]%2==0)
+		if(arr[4]%2==0)
 		{
 			a=a+arr[4];
 		}

@@ -5,11 +5,11 @@ int main()
 	printf("enter number :");
 	scanf("%d",&n);
 	
-	for(int i=1; i<=n; i*=2)
+	for(int i=1; i<=n; i++) //i*=2
 	{
 		
-		printf("%d\t",a);			  
-		a=a+i;
+		printf("%d\t",a*i);			  
+		// a=a+i;
 		a=a*2;
 	}
 return 0;

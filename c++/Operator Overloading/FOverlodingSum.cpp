@@ -11,9 +11,9 @@ public:
         cout << "enter value of a : ";
         cin >> a;
     }
-    void input()
+    void input(int x)
     {
-        cout << "enter value of b : ";
+        cout << "enter " << x << " value of b : ";
         cin >> b;
     }
 
@@ -25,26 +25,34 @@ public:
         return (A);
     }
 
-    void print()
+    void print(int x)
     {
-        cout << "the value of A is : " << a << endl;
-        cout << "the value of B is : " << b << endl;
+        cout << "the " << x << " value of A is : " << a << endl;
     }
-    
+    void print1(int y)
+    {
+
+        cout << "the " << y << " value of B is : " << b << endl;
+    }
 };
 
 
 int main()
 {
 
-    arith_num a, b, c;
+    arith_num a, b, c, d, e, f;
 
     a.input();
     b.input();
 
-    c = a + b;
+    c.input(1);
+    d.input(1);
 
-    c.print();
+    e = a + b;
+    f = c + d;
+
+    e.print(2);
+    f.print1(3);
 
     return 0;
 }

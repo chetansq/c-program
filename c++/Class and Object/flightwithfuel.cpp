@@ -23,7 +23,6 @@ public:
 
         cout << "Distance : ";
         cin >> Distance;
-        
     }
 
     void showdata()
@@ -50,7 +49,7 @@ void Fuel ::calfuel()
         Fuel = Distance / 96 * 10;
         cout << "fuel is : " << Fuel << endl;
     }
-    else if (Distance > 2000)
+    else
     {
         Fuel = Distance / 96 * 10;
         cout << "fuel is : " << Fuel << endl;

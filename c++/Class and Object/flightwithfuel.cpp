@@ -38,20 +38,20 @@ void Fuel ::calfuel()
 {
 
     if (Distance <= 1000)
-    {
+    { 
 
-        Fuel = Distance / 96 * 10;
+        Fuel = Distance * 0.5;
         cout << "fuel is : " << Fuel << endl;
     }
     else if (Distance > 1000 && Distance <= 2000)
     {
 
-        Fuel = Distance / 96 * 10;
+        Fuel = Distance * 0.5;
         cout << "fuel is : " << Fuel << endl;
     }
     else
     {
-        Fuel = Distance / 96 * 10;
+        Fuel = Distance * 0.5;
         cout << "fuel is : " << Fuel << endl;
     }
 }

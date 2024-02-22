@@ -9,7 +9,7 @@ class student
     char sname[20];
     float eng, math, science;
     float total;
-
+    float ctotal();
 public:
     void takeData()
     {
@@ -27,23 +27,27 @@ public:
 
         cout<<"enter the science :";
         cin>>science;
+        
     }
-    float ctotal()
-    {
-        total =eng+math+science;
-        cout<<"total is :"<<total;
-
-    }
+    
     void showData()
     {
         cout << "admno :" << admno << endl;
         cout << "sname :" << sname << endl;
         cout << "eng :" << eng << endl;
         cout << "math :" << math << endl;
-        cout << "science :" << science << endl;   
+        cout << "science :" << science << endl;  
+        ctotal();
+       
     }
 };
 
+float student :: ctotal()
+    {
+        total =eng+math+science;
+         cout<<"total is :"<<total<<endl; 
+
+    }
 // void student ::takeData()
 // {
 //     admno ;
@@ -59,7 +63,7 @@ int main()
 
     std.takeData();
     std.showData();
-    std.ctotal();
+    // std.ctotal();
 
     return 0;
 }

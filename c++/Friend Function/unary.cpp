@@ -7,10 +7,12 @@ private:
     int a;
     int b;
 
-public:
-    friend complex operator-(complex o1);
+    friend complex comp(complex o1, complex o2);
 
-   void comp(int x, int y)
+public:
+    complex(){};
+
+    complex(int x, int y)
     {
         a = x;
         b = y;
@@ -18,25 +20,30 @@ public:
 
     void print()
     {
-        cout << "Your number is : " << a <<" " << b << endl;
+        cout << "Your number is : " << a << " " << b << endl;
     }
 };
 
-complex operator-(complex o1)
+complex comp(complex o1, complex o2)
 {
+    complex sum;
 
-    o1.a--;
-    o1.b--;
-    return o1;
+    sum.a = o1.a + o2.a;
+    sum.b = o1.b + o2.b;
+    return sum;
 }
 
 int main()
 {
-    complex sum1;
-    sum1.comp(2,3);
-    -sum1;
-    sum1.print();
+    complex sum1(20, 30), sum2(10, 20);
 
+    sum1.print();
+    sum2.print();
+
+    complex c;
     cout << "----------------------" << endl;
+    c = comp(sum1, sum2);
+    c.print();
+
     return 0;
 }

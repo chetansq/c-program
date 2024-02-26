@@ -1,64 +1,69 @@
 #include <iostream>
 using namespace std;
 
-class student
+// wit private
+
+class A
 {
     int id;
-    char sname[20];
-    float total, per;
 
 public:
-    int marks;
-
-    void adddata()
+    void id_A()
     {
-        cout << "Enter Student id : ";
+        cout << "etner id From calss A :";
         cin >> id;
+    }
 
-        cout << "enter Student name : ";
-        cin >> sname;
+    void print1()
+    {
+        cout << "id From class A: " << id << endl;
+    }
+};
+
+class B : public A
+{
+    int id;
+
+public:
+    void id_B()
+    {
+
+        cout << "etner id From calss B :";
+        cin >> id;
+    }
+
+    void print2()
+    {
+        cout << "id From class B : " << id << endl;
+    }
+};
+
+class C : public B
+{
+    char name[20];
+
+public:
+    void n_C()
+    {
+        cout << "etner Name :";
+        cin >> name;
     }
 
     void print()
     {
-        cout << "Student id is : " << id << endl;
-        cout << "Student name is : " << sname << endl;
-    }
-
-    void printdata()
-    {
-        cout << "Marks is : " << marks << endl;
+        cout << endl;
+        print1();
+        print2();
+        cout << "Name is : " << name << endl;
     }
 };
-
-class data : public student
-{
-public:
-    void addmore()
-    {
-        cout << "Enter Student Marks : ";
-        cin >> marks;
-    };
-};
-
 int main()
 {
-    data d1[3], d2;
-    d2.adddata();
 
-    for (int i = 0; i < 3; i++)
-    {
-        d1[i].addmore();
-    }
-    
-
-    cout << endl;
-    d2.print();
-
-    for (int i = 0; i < 3; i++)
-    {
-        d1[i].printdata();
-    }
-
+    C c1;
+    c1.id_A();
+    c1.id_B();
+    c1.n_C();
+    c1.print();
     return 0;
 }

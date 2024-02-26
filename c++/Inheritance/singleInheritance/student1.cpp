@@ -51,6 +51,7 @@ int main()
         d1[i].addmore();
     }
     
+    
 
     cout << endl;
     d2.print();

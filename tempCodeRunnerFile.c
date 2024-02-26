@@ -28,10 +28,12 @@ while(min <=max)
     else
     {
         max=mid-1;
+
     }
 }
 return-1;
 }
+
 
 int main()
 {

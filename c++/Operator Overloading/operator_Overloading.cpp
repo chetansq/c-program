@@ -12,11 +12,12 @@ public:
         cin >> a;
     }
 
-    arith_num operator+(arith_num obj)
+    arith_num operator +(arith_num obj)
     {
         arith_num A;
         A.a = a + obj.a;
-        return (A);
+
+        return A;
     }
 
     void print()

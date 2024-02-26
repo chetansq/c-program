@@ -10,7 +10,7 @@ private:
     friend complex comp(complex o1, complex o2);
 
 public:
-    complex(){};
+    complex(){}
 
     complex(int x, int y)
     {

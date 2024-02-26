@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// with private
+
 class A
 {
     int id;

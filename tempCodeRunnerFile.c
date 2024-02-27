@@ -1,54 +1,34 @@
 #include<stdio.h>
-int a[10] = {2,4,6,8,10,12,14,16,18,20};
-
-int i, min=0,max=9,x,n,result;
-int value()
-{
-    for(i=0;i<10;i++)
-    {
-        printf("%d\t",a[i]);
-
-    }
-}
-
-int binaryserch(int n, int min, int max)
-{
-    int mid;
-while(min <=max)
-{
-    mid = min +(max-min)/2;
-    if(a[mid]==n)
-    {
-        return mid;
-    }
-    else if(a[mid]<n)
-    {
-        min=mid+1;
-    }
-    else
-    {
-        max=mid-1;
-
-    }
-}
-return-1;
-}
-
+struct node{
+ int data;
+ char ch;
+ struct node*ptr;
+};
 
 int main()
 {
-    value();
-    printf("\n\n enter vlaue :");
-    scanf("%d",&x);
-    result = binaryserch (x,min,max);
-    if(result !=-1)
-    {
-        printf("\n yes it is present [%d]",result);
+    struct node a,b;
+    a.data = 65;
+    a.ch = 'A';
+    a.ptr = null;
 
-    }else
-    {
-        printf("\n not it is present");
+    //printf("data of a is : %d\n",a.data);
+    //printf("char of a is : %d\c",a.ch);
+   
+    b.data = 97;
+    b.ch = 'a';
+    b.ptr = null;
 
-    }
-    return 0;
+    //printf("data of b is : %d\n",b.data);
+     //printf("char of b is : %c\n",b.ch);
+
+     a.ptr = &b;
+     //printf("data of b is : %d\n",ptr->data);
+     //printf("char of b is : %c\n",ptr->ch);
+    
+     b.ptr = &a;
+     printf("data of a is : %d\n",b.ptr->data);
+     printf("char of a is : %c\n",b.ptr->ch);
+    
+
 }

@@ -9,6 +9,7 @@ class bank
 
 public:
     int amount;
+    int code,code1;
     bank() {}
 
     bank(long long int accountNo1, string name1, int balance1)
@@ -19,7 +20,9 @@ public:
     }
 
     void deposit()
-    {
+    {   
+        
+        cout<<endl<<endl;
         cout << "enter amount : ";
         cin >> amount;
 
@@ -34,6 +37,13 @@ public:
 
     void withdraw()
     {
+            cout<<"Enter Your id Code : ";
+            cin>>code;
+            cout<<"Confirm id Code : ";
+            cin>>code1;
+
+            if(code==code1){
+        //enter code for withdraw
         cout << "enter amount : ";
         cin >> amount;
 
@@ -43,6 +53,10 @@ public:
         cout << endl;
         cout << endl;
         print();
+            }
+            else{
+                cout<<"Not Match !";
+            }
     }
     void print()
     {

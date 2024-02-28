@@ -66,6 +66,7 @@ int main()
     char y;
     char y1 = 'y';
     int num;
+    
     cout << "Enter Number : "; // set snumber for limit
     cin >> num;
 
@@ -75,11 +76,11 @@ start:
          << endl;
     cout << "1. Account information " << endl
          << endl;
-    cout << "2.  Add Money" << endl
+    cout << "2.  Add Money " << endl
          << endl;
     cout << "3.  Withdraw " << endl
          << endl;
-    cout << "4.  check balance" << endl
+    cout << "4.  Transaction " << endl
          << endl;
     cout << "5. EXIT ! " << endl
          << endl;
@@ -88,7 +89,7 @@ start:
     switch (option)
     {
     case 1:
-        cout << "Account Information : ";
+        cout << "Your Account Information : ";
         cout << endl
              << endl;
         for (int i = 0; i < 4; i++)
@@ -113,7 +114,7 @@ start:
         break;
 
     case 2:
-
+        cout << "Deposite Money : ";
         for (int i = 0; i < 4; i++)
         {
             if (i == num)
@@ -136,6 +137,7 @@ start:
         break;
 
     case 3:
+        cout << "Withdraw Money : ";
         for (int i = 0; i < 4; i++)
         {
             if (i == num)
@@ -158,7 +160,9 @@ start:
         break;
 
     case 4:
+        cout << "Transaction : ";
 
+            
         break;
 
     default:

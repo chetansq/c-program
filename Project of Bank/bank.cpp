@@ -77,7 +77,13 @@ public:
             cout << "Not Match !";
         }
     }
+    void Transaction(bank &temp, double amount)
+    {
+        balance -= amount;
+        temp.balance += amount;
 
+        print();
+    }
     // || ************** Print data *************** ||
 
     void print()
@@ -102,7 +108,9 @@ int main()
     int option;
     char y;
     char y1 = 'y';
+    char y2 = 'n';
     int num;
+    int amount1;
 
 restart:
     cout << "Enter Number : "; // set snumber for limit
@@ -149,7 +157,7 @@ restart:
                         acc[i].print();
                 }
                 cout << endl;
-
+            s:
                 cout << "you want to countinue (y/n) : ";
                 cin >> y;
 
@@ -157,9 +165,16 @@ restart:
                 {
                     goto start;
                 }
-                else
+                else if (y2 == y)
                 {
                     goto end;
+                }
+                else
+                {
+                    cout << endl
+                         << endl;
+                    cout << "Not Match !, please enter 'y' or 'n' ";
+                    goto s;
                 }
                 break;
 
@@ -209,6 +224,44 @@ restart:
                 }
                 break;
 
+            case 4:
+                int num1;
+                cout << "Transaction : ";
+                for (int i = 1; i < 6; i++)
+                {
+                    if (i == num)
+                    {
+                        cout << "Enter NO for transfer : ";
+                        cin >> num1;
+                        cout << "Enter The Amount : ";
+                        cin >> amount1;
+
+                        cout << "you want to countinue (y/n) : ";
+                        cin >> y;
+                        if (y1 == y)
+                        {
+                            acc[i].Transaction(acc[num1], amount1);
+                        }
+                        else
+                        {
+                            goto end;
+                        }
+                    }
+                }
+                cout << endl;
+                cout << "you want to countinue (y/n) : ";
+                cin >> y;
+
+                if (y1 == y)
+                {
+                    goto start;
+                }
+                else
+                {
+                    goto end;
+                }
+                break;
+
             default:
                 break;
             }
@@ -242,3 +295,9 @@ exit:
 }
 
 // DRY -> do not repeat yourself
+
+// void Transaction(bank &temp, double amount)
+// {
+//     balance -= amount;
+//     temp.balance += amount;
+// }

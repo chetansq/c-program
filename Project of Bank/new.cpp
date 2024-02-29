@@ -95,7 +95,7 @@ public:
     int amount;
     // long long int accountNo1;
     int id2;
-    bank() {}
+    bank(){};
 
     bank(int id1, long long int accountNo1, string name1, int balance1)
     {
@@ -165,13 +165,26 @@ public:
 
     // void transaction()
     // {
-    //     cout << "Enter your accoutnt Number : ";
-    //     cin >> accountNo1;
+    //     cout << "Enter your id for Transaction : ";
+    //     cin >> id2;
 
-    //     cout << "Enter Another AC NO for transaction : ";
-    //     cin >> accountNo;
+    //     cout << "Enter Another id for transaction : ";
+    //     cin >> id;
 
+    //     cout << "Enter Amount : ";
+    //     cin >> amount;
     // }
+
+    // *************** Transaction ****************
+
+    void transaction(bank &temp, double amount)
+    {
+        balance -= amount;
+        temp.balance += amount;
+
+        print();
+    }
+    // *************** Loan ****************
 
     // *************** Print data ****************
 
@@ -197,7 +210,10 @@ int main()
     int option;
     char y;
     char y1 = 'y';
+    char y2='n';
     int num;
+    int amount1;
+    int id2;
 
 restart:
     cout << "Enter Number : "; // set snumber for limit
@@ -227,7 +243,7 @@ start:
     switch (option)
     {
     case 1:
-    
+
         cout << "Your Account Information : ";
         cout << endl
              << endl;
@@ -298,40 +314,60 @@ start:
         }
         break;
 
-        // case 4:
-        //     cout << "Transaction : ";
+    case 4:
+        cout << "Transaction : ";
 
-        //     for (int i = 0; i < 4; i++)
-        //     {
-        //         if (i == num)
-        //         {
-        //             acc[i].transaction();
-        //         }
-        //     }
-        //     cout << endl;
-        //     cout << "you want to countinue (y/n) : ";
-        //     cin >> y;
+        for (int i = 0; i < 4; i++)
+        {
+            // cout<<"Enter id for transaction : ";
+            // cin>>id2;
+            if (i == num)
+            {
 
-        //     if (y1 == y)
-        //     {
-        //         goto start;
-        //     }
-        //     else
-        //     {
-        //         goto end;
-        //     }
-        //     break;
+                cout << "Enter number for your transaction : ";
+                cin >> num;
 
+                if(num==i)
+                {
+                cout << "Enter amount for transfer : ";
+                cin >> amount1;
+                
+                acc[i].transaction(acc[i], amount1);
+                }
+            }
+        }
+        break;
+    // user[current].Accout_to_Account(user[client],amount)
     default:
-        // cout << "thank you  !";
+
         break;
     }
+    s:
+    cout << endl;
+    cout << "you want to countinue (y/n) : ";
+    cin >> y;
+
+    if (y1 == y)
+    {
+        goto start;
+    }
+    else if (y2==y)
+    {
+        goto end;
+    }
+    else{
+        cout<<endl<<endl;
+        cout<<"Not Match !, please enter 'y' or 'n' ";
+        goto s;
+    }
+
 end:
     cout << "Thank you !";
     cout << endl
          << endl;
 
-    cout << "*******************************************" << endl;
+    cout
+        << "*******************************************" << endl;
     cout << "      Your Session is Complete ! " << endl;
     cout << "*******************************************";
     cout << endl

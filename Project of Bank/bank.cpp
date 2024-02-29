@@ -91,12 +91,13 @@ public:
 
 int main()
 {
-    bank acc[5], b1;
+    bank acc[6], b1;
 
     acc[1] = bank{1001, 45671000101234, "Ajay patel", 50000};
     acc[2] = bank{1002, 45671000104567, "Meet Desai ", 25000};
     acc[3] = bank{1003, 13221000107894, "Raj Goti", 10000};
     acc[4] = bank{1004, 45671000107412, "Yash Sharma", 40000};
+    acc[5] = bank{1005, 99671000107411, "Rohit Sharma", 47000};
 
     int option;
     char y;
@@ -111,104 +112,111 @@ restart:
     {
         goto exit;
     }
-
-start:
-    cout << endl;
-    cout << "PLEASE ! SELECT A OPTION : \n"
-         << endl;
-    cout << "1. Account information " << endl
-         << endl;
-    cout << "2.  Add Money " << endl
-         << endl;
-    cout << "3.  Withdraw " << endl
-         << endl;
-    cout << "4.  Transaction " << endl
-         << endl;
-    cout << "5. EXIT ! " << endl
-         << endl;
-    cin >> option;
-
-    if (option < 6)
+    else if (num > 5)
     {
-        switch (option)
-        {
-        case 1:
-            cout << "Your Account Information : ";
-            cout << endl
-                 << endl;
-            for (int i = 1; i < 5; i++)
-            {
-                if (i == num)
-                    acc[i].print();
-            }
-            cout << endl;
-
-            cout << "you want to countinue (y/n) : ";
-            cin >> y;
-
-            if (y1 == y)
-            {
-                goto start;
-            }
-            else
-            {
-                goto end;
-            }
-            break;
-
-        case 2:
-            cout << "Deposite Money : ";
-            for (int i = 1; i < 5; i++)
-            {
-                if (i == num)
-                {
-                    acc[i].deposit();
-                }
-            }
-            cout << endl;
-            cout << "you want to countinue (y/n) : ";
-            cin >> y;
-
-            if (y1 == y)
-            {
-                goto start;
-            }
-            else
-            {
-                goto end;
-            }
-            break;
-
-        case 3:
-            cout << "Withdraw Money : ";
-            for (int i = 1; i < 5; i++)
-            {
-                if (i == num)
-                {
-                    acc[i].withdraw();
-                }
-            }
-            cout << endl;
-            cout << "you want to countinue (y/n) : ";
-            cin >> y;
-
-            if (y1 == y)
-            {
-                goto start;
-            }
-            else
-            {
-                goto end;
-            }
-            break;
-
-        default:
-            break;
-        }
+        cout << "Not Account Avilabel ";
     }
     else
     {
-        cout<<"Sorry,Option Not Match "<<endl;
+
+    start:
+        cout << endl;
+        cout << "PLEASE ! SELECT A OPTION : \n"
+             << endl;
+        cout << "1. Account information " << endl
+             << endl;
+        cout << "2.  Add Money " << endl
+             << endl;
+        cout << "3.  Withdraw " << endl
+             << endl;
+        cout << "4.  Transaction " << endl
+             << endl;
+        cout << "5. EXIT ! " << endl
+             << endl;
+        cin >> option;
+
+        if (option < 6)
+        {
+            switch (option)
+            {
+            case 1:
+                cout << "Your Account Information : ";
+                cout << endl
+                     << endl;
+                for (int i = 1; i < 6; i++)
+                {
+                    if (i == num)
+                        acc[i].print();
+                }
+                cout << endl;
+
+                cout << "you want to countinue (y/n) : ";
+                cin >> y;
+
+                if (y1 == y)
+                {
+                    goto start;
+                }
+                else
+                {
+                    goto end;
+                }
+                break;
+
+            case 2:
+                cout << "Deposite Money : ";
+                for (int i = 1; i < 6; i++)
+                {
+                    if (i == num)
+                    {
+                        acc[i].deposit();
+                    }
+                }
+                cout << endl;
+                cout << "you want to countinue (y/n) : ";
+                cin >> y;
+
+                if (y1 == y)
+                {
+                    goto start;
+                }
+                else
+                {
+                    goto end;
+                }
+                break;
+
+            case 3:
+                cout << "Withdraw Money : ";
+                for (int i = 1; i < 6; i++)
+                {
+                    if (i == num)
+                    {
+                        acc[i].withdraw();
+                    }
+                }
+                cout << endl;
+                cout << "you want to countinue (y/n) : ";
+                cin >> y;
+
+                if (y1 == y)
+                {
+                    goto start;
+                }
+                else
+                {
+                    goto end;
+                }
+                break;
+
+            default:
+                break;
+            }
+        }
+        else
+        {
+            cout << "Sorry,Option Not Match " << endl;
+        }
     }
 end:
     cout << "Thank you !";

@@ -85,6 +85,7 @@ public:
         temp.balance += amount;
 
         cout<<"transfer Amount : "<<amount;
+        cout<<endl<<endl;
         print();
     }
     // || ************** Print data *************** ||
@@ -110,12 +111,13 @@ int main()
 
     int option;
     char y;
-    char y1 = 'y';
-    char y2 = 'n';
+    // char y1 = 'y';
+    // char y2 = 'n';
     int num;
     int amount1;
 
 restart:
+    // cout<<"Dop You Want to Exit (Press = 0) : "<<endl<<endl;
     cout << "Enter Number : "; // set snumber for limit
     cin >> num;
 
@@ -161,14 +163,14 @@ restart:
                 }
                 cout << endl;
             s:
-                cout << "you want to countinue (y/n) : ";
+                cout << "you want to countinue (y='1'/n='0') : ";
                 cin >> y;
 
-                if (y1 == y)
+                if (y=1)
                 {
                     goto start;
                 }
-                else if (y2 == y)
+                else if (y=0)
                 {
                     goto end;
                 }
@@ -176,7 +178,7 @@ restart:
                 {
                     cout << endl
                          << endl;
-                    cout << "Not Match !, please enter 'y' or 'n' ";
+                    cout << "Not Match !, please enter 'y' or 'n' \n";
                     goto s;
                 }
                 break;
@@ -192,14 +194,14 @@ restart:
                 }
                 cout << endl;
                 s2:
-                cout << "you want to countinue (y/n) : ";
+                cout << "you want to countinue (y='1'/n='0') : ";
                 cin >> y;
 
-                if (y1 == y)
+                if (y=1)
                 {
                     goto start;
                 }
-               else if (y2 == y)
+               else if (y = 0)
                 {
                     goto end;
                 }
@@ -207,7 +209,7 @@ restart:
                 {
                     cout << endl
                          << endl;
-                    cout << "Not Match !, please enter 'y' or 'n' ";
+                    cout << "Not Match !, please enter 'y' or 'n' "<<endl;
                     goto s2;
                 }
                 break;
@@ -223,14 +225,14 @@ restart:
                 }
                 cout << endl;
                 s3:
-                cout << "you want to countinue (y/n) : ";
+                cout << "you want to countinue (y='1'/n='0') : ";
                 cin >> y;
-
-                if (y1 == y)
+                getchar();
+                if (y = 1)
                 {
                     goto start;
                 }
-                else if (y2 == y)
+                else if (y = 0)
                 {
                     goto end;
                 }
@@ -257,9 +259,9 @@ restart:
                         cout << "Enter The Amount : ";
                         cin >> amount1;
 
-                        cout << "you want to countinue for transfer (y/n) : ";
+                        cout << "you want to countinue for transfer (y='1'/n='0') : ";
                         cin >> y;
-                        if (y1 == y)
+                        if (y = 1)
                         {
                             acc[i].Transaction(acc[num1], amount1);
                         }
@@ -271,14 +273,14 @@ restart:
                 }
                 cout << endl;
                 s4:
-                cout << "you want to countinue (y/n) : ";
+                cout << "you want to countinue (y='1'/n='0') : ";
                 cin >> y;
 
-                if (y1 == y)
+                if (y = 1)
                 {
                     goto start;
                 }
-                else if (y2 == y)
+                else if (y = 0)
                 {
                     goto end;
                 }

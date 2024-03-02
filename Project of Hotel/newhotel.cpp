@@ -2,6 +2,14 @@
 #include <string.h>
 using namespace std;
 
+struct view
+{
+    string dname;
+    int prise;
+    int quantity;
+    int total;
+};
+
 class Hotel
 {
     static int tableNo;
@@ -12,7 +20,8 @@ public:
     int dishNo;
     string dname;
     int prise;
-    int recipt1 = 0;
+    int total;
+
     Hotel() {}
 
     Hotel(int t1, string n1, int p1)
@@ -44,12 +53,10 @@ public:
         cout << "Phone No : " << phoneNo << endl;
     }
 
-    void print()
+    void print(int num)
     {
-        for (int i = 1; i < 27; i++)
-        {
-            cout << dishNo << " " << dname << " " << prise << endl;
-        }
+        dishNo = num;
+        cout << dishNo << " " << dname << " " << prise << endl;
     }
 
     void order()
@@ -74,6 +81,18 @@ public:
 
         // print();
     }
+
+    view CountQuantity(int quantity)
+    {
+        view view1;
+        view1.dname = dname;
+        view1.prise = prise;
+        view1.quantity = quantity;
+        view1.total = view1.prise * view1.quantity;
+
+        return view1;
+        // cout << dishNo << "   " << dname << "  " << quantity << "  " << prise << "  " << total << endl;
+    }
 };
 
 int Hotel ::tableNo;
@@ -81,7 +100,8 @@ int Hotel ::tableNo;
 int main()
 {
 
-    Hotel h1[30], h2;
+    Hotel h1[30], h2; // iten no
+    view v1[30];      // order detail
 table:
     h2.tablenois();
     h2.addTable();
@@ -95,12 +115,12 @@ table:
     h1[7] = Hotel{7, " Kaju Panir         ", 100};
     h1[8] = Hotel{8, " Kaju Masala        ", 100};
     h1[9] = Hotel{9, " Kaju Kari          ", 100};
-    h1[10] = Hotel{0, " Panir Bhurji       ", 100};
-    h1[11] = Hotel{1, " Manchurian         ", 120};
-    h1[12] = Hotel{2, " chilli Paneer      ", 120};
-    h1[13] = Hotel{3, " Hakka Noodles      ", 80};
-    h1[14] = Hotel{4, " Schezwan Fried Rice ", 90};
-    h1[15] = Hotel{5, " Spring Rol         ", 100};
+    h1[10] = Hotel{10, " Panir Bhurji       ", 100};
+    h1[11] = Hotel{11, " Manchurian         ", 120};
+    h1[12] = Hotel{12, " chilli Paneer      ", 120};
+    h1[13] = Hotel{13, " Hakka Noodles      ", 80};
+    h1[14] = Hotel{14, " Schezwan Fried Rice ", 90};
+    h1[15] = Hotel{15, " Spring Rol         ", 100};
     h1[16] = Hotel{16, " Coca Cola          ", 20};
     h1[17] = Hotel{17, " Sosiyo             ", 20};
     h1[18] = Hotel{18, " Sprite             ", 20};
@@ -117,7 +137,9 @@ table:
     int menu_option;
     int num;
     int y;
-    // int d;
+    int qty;
+    int c = 1;
+
     cout << "\n\n"
          << endl;
     cout << "||||||||||||||||||||||||||||||||||||||||||||||||||||||\n"
@@ -127,6 +149,7 @@ table:
     cout << "||||||||||||||||||||||||||||||||||||||||||||||||||||||\n"
          << endl;
 start:
+// order:
 end: // Add option paymet,checkout,exit
     cout << "please Select a option : " << endl
          << endl;
@@ -135,9 +158,9 @@ end: // Add option paymet,checkout,exit
          << endl;
     cout << "2 |  Order \n"
          << endl;
-    cout << "3 |  We Are Waiting For You (payment) \n"
+    cout << "3 |  View Ordered \n"
          << endl;
-    cout << "4 | Exit" << endl
+    cout << "4 | We Are Waiting For You (payment)" << endl
          << endl;
     cin >> option;
 
@@ -145,6 +168,7 @@ end: // Add option paymet,checkout,exit
     {
     case 1:
     k1:
+
         // cout << " Welcome " << endl;
 
         cout << endl;
@@ -174,72 +198,28 @@ end: // Add option paymet,checkout,exit
             switch (menu_option)
             {
             case 1:
-                cout << "                      Kathiya Wadi \n"
-                     << endl;
-                cout << "       dishes name                      Prise" << endl;
-                cout << "---------------------------------------------" << endl;
-                cout << "1  |  Sev Tameta                          60 " << endl;
-                cout << "2  |  Chapati                             10 " << endl;
-                cout << "3  |  Rigan Bharthu                       60 " << endl;
-                cout << "4  |  Fry Bhindi                          60 " << endl;
-                cout << "5  |  Dal Fry                             50 " << endl;
 
                 goto k1;
                 break;
 
             case 2:
 
-                cout << "                        Panjabi \n"
-                     << endl;
-                cout << "       dishes name                      Prise" << endl;
-                cout << "---------------------------------------------" << endl;
-                cout << "1  |  Panir Masala                       100 " << endl;
-                cout << "2  |  Kaju Panir                         100 " << endl;
-                cout << "3  |  Kaju Masala                        100 " << endl;
-                cout << "4  |  Kaju Kari                          100 " << endl;
-                cout << "5  |  Panir Bhurji                       100 " << endl;
                 goto k1;
                 break;
 
             case 3:
-                cout << "                        Chinese \n"
-                     << endl;
-                cout << "       dishes name                      Prise" << endl;
-                cout << "---------------------------------------------" << endl;
-                cout << "1  |  Manchurian                         120 " << endl;
-                cout << "2  |  chilli Paneer                      120 " << endl;
-                cout << "3  |  Hakka Noodles                       80 " << endl;
-                cout << "4  |  Schezwan Fried Rice                 90 " << endl;
-                cout << "5  |  Spring Rol                         100 " << endl;
+
                 goto k1;
                 break;
 
             case 4:
-                cout << "                        Cold Drinks \n"
-                     << endl;
-                cout << "       name                         Prise" << endl;
-                cout << "---------------------------------------------" << endl;
-                cout << "1 |  Coca Cola                       20 " << endl;
-                cout << "2 |  Sosiyo                          20 " << endl;
-                cout << "3 |  Sprite                          20 " << endl;
-                cout << "4 |  Thums Up                        20 " << endl;
-                cout << "5 |  Mengo                           20 " << endl;
-                cout << "6 |  Chhash                          20 " << endl
-                     << endl;
+
+                //  << endl;
                 goto k1;
                 break;
 
             case 5:
-                cout << "                       Dessert \n"
-                     << endl;
-                cout << "        name                          Prise" << endl;
-                cout << "---------------------------------------------" << endl;
-                cout << "22 |  Ice-Cream                         50 " << endl;
-                cout << "23 |  Cakeballs                         50 " << endl;
-                cout << "24 |  Chocolate Cake                    60 " << endl;
-                cout << "25 |  Mini Cupcakes                     30 " << endl;
-                cout << "26 |  Pestrys                           40 " << endl
-                     << endl;
+
                 goto k1;
                 break;
             default:
@@ -249,61 +229,6 @@ end: // Add option paymet,checkout,exit
         break;
 
     case 2:
-        cout << "                      Kathiya Wadi \n"
-             << endl;
-        cout << "       dishes name                      Prise" << endl;
-        cout << "---------------------------------------------" << endl;
-        cout << "1  |  Sev Tameta                          60 " << endl;
-        cout << "2  |  Chapati                             10 " << endl;
-        cout << "3  |  Rigan Bharthu                       60 " << endl;
-        cout << "4  |  Fry Bhindi                          60 " << endl;
-        cout << "5  |  Dal Fry                             50 " << endl
-             << endl;
-
-        cout << "                        Panjabi \n"
-             << endl;
-        cout << "       dishes name                      Prise" << endl;
-        cout << "---------------------------------------------" << endl;
-        cout << "6  |  Panir Masala                       100 " << endl;
-        cout << "7  |  Kaju Panir                         100 " << endl;
-        cout << "8  |  Kaju Masala                        100 " << endl;
-        cout << "9  |  Kaju Kari                          100 " << endl;
-        cout << "10 |  Panir Bhurji                       100 " << endl
-             << endl;
-
-        cout << "                        Chinese \n"
-             << endl;
-        cout << "       dishes name                      Prise" << endl;
-        cout << "---------------------------------------------" << endl;
-        cout << "11 |  Manchurian                         120 " << endl;
-        cout << "12 |  chilli Paneer                      120 " << endl;
-        cout << "13 |  Hakka Noodles                       80 " << endl;
-        cout << "14 |  Schezwan Fried Rice                 90 " << endl;
-        cout << "15 |  Spring Rol                         100 " << endl
-             << endl;
-
-        cout << "                  Cold Drinks \n"
-             << endl;
-        cout << "       name                         Prise" << endl;
-        cout << "---------------------------------------------" << endl;
-        cout << "16 |  Coca Cola                       20 " << endl;
-        cout << "17 |  Sosiyo                          20 " << endl;
-        cout << "18 |  Sprite                          20 " << endl;
-        cout << "19 |  Thums Up                        20 " << endl;
-        cout << "20 |  Mengo                           20 " << endl;
-        cout << "21 |  Chhash                          20 " << endl
-             << endl;
-
-        cout << "                       Dessert \n"
-             << endl;
-        cout << "        name                          Prise" << endl;
-        cout << "---------------------------------------------" << endl;
-        cout << "22 |  Ice-Cream                         50 " << endl;
-        cout << "23 |  Cakeballs                         50 " << endl;
-        cout << "24 |  Chocolate Cake                    60 " << endl;
-        cout << "25 |  Mini Cupcakes                     30 " << endl;
-        cout << "26 |  Pestrys                           40 " << endl
-             << endl;
 
         cout << " Your Order :-- " << endl;
 
@@ -312,12 +237,11 @@ end: // Add option paymet,checkout,exit
     star:
         cout << "Enter Number for Order : " << endl;
         cin >> num;
-        for (int i = 1; i < 27; i++)
-        {
-            if (i == num)
-                h1[i].print();
-        }
+
+        cout << "Qty : ";
+        cin >> qty;
         cout << endl;
+        v1[c] = h1[num].CountQuantity(qty);
     s:
         cout << "Do you want to countinue Order (y='1'/n='0') : ";
         cin >> y;
@@ -342,6 +266,23 @@ end: // Add option paymet,checkout,exit
 
     case 3:
 
+        
+        cout << " order_No    Dish name      Qty     Prise     Total " << endl;
+
+        c++;
+
+        for (int i = 1; i < c; i++)
+        {
+            cout << i + 1 << "   " << v1[i].dname << "   " << v1[i].prise << "   " << v1[i].quantity << "   " << v1[i].total << endl;
+        }
+
+        cout << endl
+             << endl;
+
+        // goto order;
+        break;
+    case 4:
+
         cout << "-----------------||  Thank You  ||---------------------" << endl
              << endl;
         h2.tablenois();
@@ -350,14 +291,15 @@ end: // Add option paymet,checkout,exit
         cout << "-----------------||     BILL    ||---------------------" << endl
              << endl;
 
-        for (int i = 1; i < 27; i++)
+        for (int i = 0; i < c; i++)
         {
 
-            if (i == num)
-            {
-                h1[i].order();
-                cout << endl;
-            }
+            h1[i].order();
+            // cout<< v1[i].dname<<endl;
+            // cout<< v1[i].prise<<endl;
+            // cout<< v1[i].quantity<<endl;
+            // cout<< v1[i].total<<endl;
+            cout << endl;
         }
         cout << endl;
         cout << "-----------------||  Wlcome Again  ||---------------------" << endl;
@@ -391,3 +333,111 @@ ending:
     cout << "Thank You ";
     return 0;
 }
+
+//  cout << "                      Kathiya Wadi \n"
+//                      << endl;
+//                 cout << "       dishes name                      Prise" << endl;
+//                 cout << "---------------------------------------------" << endl;
+//                 cout << "1  |  Sev Tameta                          60 " << endl;
+//                 cout << "2  |  Chapati                             10 " << endl;
+//                 cout << "3  |  Rigan Bharthu                       60 " << endl;
+//                 cout << "4  |  Fry Bhindi                          60 " << endl;
+//                 cout << "5  |  Dal Fry                             50 " << endl;
+
+// cout << "                        Panjabi \n"
+//                      << endl;
+//                 cout << "       dishes name                      Prise" << endl;
+//                 cout << "---------------------------------------------" << endl;
+//                 cout << "1  |  Panir Masala                       100 " << endl;
+//                 cout << "2  |  Kaju Panir                         100 " << endl;
+//                 cout << "3  |  Kaju Masala                        100 " << endl;
+//                 cout << "4  |  Kaju Kari                          100 " << endl;
+//                 cout << "5  |  Panir Bhurji                       100 " << endl;
+
+// cout << "                        Chinese \n"
+//                      << endl;
+//                 cout << "       dishes name                      Prise" << endl;
+//                 cout << "---------------------------------------------" << endl;
+//                 cout << "1  |  Manchurian                         120 " << endl;
+//                 cout << "2  |  chilli Paneer                      120 " << endl;
+//                 cout << "3  |  Hakka Noodles                       80 " << endl;
+//                 cout << "4  |  Schezwan Fried Rice                 90 " << endl;
+//                 cout << "5  |  Spring Rol                         100 " << endl;
+
+// cout << "                        Cold Drinks \n"
+//                      << endl;
+//                 cout << "       name                         Prise" << endl;
+//                 cout << "---------------------------------------------" << endl;
+//                 cout << "1 |  Coca Cola                       20 " << endl;
+//                 cout << "2 |  Sosiyo                          20 " << endl;
+//                 cout << "3 |  Sprite                          20 " << endl;
+//                 cout << "4 |  Thums Up                        20 " << endl;
+//                 cout << "5 |  Mengo                           20 " << endl;
+//                 cout << "6 |  Chhash                          20 " << endl
+
+// cout << "                       Dessert \n"
+//                      << endl;
+//                 cout << "        name                          Prise" << endl;
+//                 cout << "---------------------------------------------" << endl;
+//                 cout << "22 |  Ice-Cream                         50 " << endl;
+//                 cout << "23 |  Cakeballs                         50 " << endl;
+//                 cout << "24 |  Chocolate Cake                    60 " << endl;
+//                 cout << "25 |  Mini Cupcakes                     30 " << endl;
+//                 cout << "26 |  Pestrys                           40 " << endl
+//                      << endl;
+
+//  cout << "                      Kathiya Wadi \n"
+//              << endl;
+//         cout << "       dishes name                      Prise" << endl;
+//         cout << "---------------------------------------------" << endl;
+//         cout << "1  |  Sev Tameta                          60 " << endl;
+//         cout << "2  |  Chapati                             10 " << endl;
+//         cout << "3  |  Rigan Bharthu                       60 " << endl;
+//         cout << "4  |  Fry Bhindi                          60 " << endl;
+//         cout << "5  |  Dal Fry                             50 " << endl
+//              << endl;
+
+//         cout << "                        Panjabi \n"
+//              << endl;
+//         cout << "       dishes name                      Prise" << endl;
+//         cout << "---------------------------------------------" << endl;
+//         cout << "6  |  Panir Masala                       100 " << endl;
+//         cout << "7  |  Kaju Panir                         100 " << endl;
+//         cout << "8  |  Kaju Masala                        100 " << endl;
+//         cout << "9  |  Kaju Kari                          100 " << endl;
+//         cout << "10 |  Panir Bhurji                       100 " << endl
+//              << endl;
+
+//         cout << "                        Chinese \n"
+//              << endl;
+//         cout << "       dishes name                      Prise" << endl;
+//         cout << "---------------------------------------------" << endl;
+//         cout << "11 |  Manchurian                         120 " << endl;
+//         cout << "12 |  chilli Paneer                      120 " << endl;
+//         cout << "13 |  Hakka Noodles                       80 " << endl;
+//         cout << "14 |  Schezwan Fried Rice                 90 " << endl;
+//         cout << "15 |  Spring Rol                         100 " << endl
+//              << endl;
+
+//         cout << "                  Cold Drinks \n"
+//              << endl;
+//         cout << "       name                         Prise" << endl;
+//         cout << "---------------------------------------------" << endl;
+//         cout << "16 |  Coca Cola                       20 " << endl;
+//         cout << "17 |  Sosiyo                          20 " << endl;
+//         cout << "18 |  Sprite                          20 " << endl;
+//         cout << "19 |  Thums Up                        20 " << endl;
+//         cout << "20 |  Mengo                           20 " << endl;
+//         cout << "21 |  Chhash                          20 " << endl
+//              << endl;
+
+//         cout << "                       Dessert \n"
+//              << endl;
+//         cout << "        name                          Prise" << endl;
+//         cout << "---------------------------------------------" << endl;
+//         cout << "22 |  Ice-Cream                         50 " << endl;
+//         cout << "23 |  Cakeballs                         50 " << endl;
+//         cout << "24 |  Chocolate Cake                    60 " << endl;
+//         cout << "25 |  Mini Cupcakes                     30 " << endl;
+//         cout << "26 |  Pestrys                           40 " << endl
+//              << endl;

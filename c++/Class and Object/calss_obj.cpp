@@ -11,7 +11,7 @@ public:
 
     void setData(int a, int b, int c); // Declaration of private
 
-    void printData()
+    void printData()                                                                                                                         
     {
         cout<<"data a is :"<<a<<endl;
         cout<<"data b is :"<<b<<endl;
@@ -38,4 +38,4 @@ int main()
     students.setData(1,2,3);
     students.printData();
     return 0;
-}
+} 

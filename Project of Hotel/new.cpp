@@ -33,11 +33,9 @@ public:
     // ---------------add name--------------
     void addTable()
     {
-        tablenois();
-        cout<<endl;
         cout << "Enter your Name : ";
         getline(cin, name);
-        cout<<endl;
+
         cout << "Enter your Mobile Number : ";
         cin >> phoneNo;
 
@@ -51,7 +49,6 @@ public:
 
     void tabledata()
     {
-        // tablenois();
         cout << "Name is : " << name << endl;
         cout << "Phone No : " << phoneNo << endl;
     }
@@ -104,7 +101,7 @@ int main()
 {
 
     Hotel h1[30], h2; // iten no
-    view v1[30];      // order detai
+    view v1[30];      // order detail
 
     h1[1] = Hotel{1, " Sev Tameta ", 60};
     h1[2] = Hotel{2, " Chapati ", 10};
@@ -144,7 +141,7 @@ int main()
     double gst = 0;
 
 table:
-    // h2.tablenois();
+    h2.tablenois();
     h2.addTable();
     cout << "\n\n"
          << endl;
@@ -168,8 +165,7 @@ end: // Add exit
          << endl;
     cout << " 4 | We Are Waiting For You (payment)" << endl
          << endl;
-    cout << " 5 | Exit " << endl
-         << endl;
+    cout << " 5 | Exit "<<endl<<endl;
 
     cin >> option;
 
@@ -271,7 +267,6 @@ end: // Add exit
             cout << "Not Match !, please enter 'y=1' or 'n=0' \n";
             goto s;
         }
-
         break;
 
     case 3:
@@ -339,7 +334,7 @@ end: // Add exit
         break;
 
     case 5:
-
+        
         break;
     default:
         break;
